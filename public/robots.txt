@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tiagopbrodrigues.com/sitemap-index.xml
