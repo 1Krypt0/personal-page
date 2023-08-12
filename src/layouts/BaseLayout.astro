@@ -11,8 +11,17 @@ import Footer from "../components/Footer.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header />
-    <slot />
-    <Footer />
+    <style>
+      .wrapper {
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+    </style>
+    <div class="wrapper">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>
