@@ -1,0 +1,19 @@
+---
+const { title, description, pubDate, category } = Astro.props;
+---
+
+<section class="flex flex-col gap-4">
+  <h4 class="text-2xl font-bold">{title}</h4>
+
+  <span class="flex flex-col md:flex-row">
+    <p class="md:border-r-dark md:pr-4 md:border-r-2">
+      {pubDate.toISOString()}
+    </p>
+    <p class="md:border-l-dark md:pl-4 text-light">
+      {category}
+    </p>
+  </span>
+  <p>
+    {description}
+  </p>
+</section>

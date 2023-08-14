@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import PostCard from "./PostCard.astro";
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 2);
+---
+
+<section class="flex flex-col items-center py-24 text-dark">
+  <div class="md:flex md:items-center md:justify-between w-full">
+    <h2
+      class="font-heading font-bold text-3xl pb-16 md:text-5xl text-center md:text-start"
+    >
+      Recent Posts
+    </h2>
+    <a href="/blog" class="text-primary hidden md:block">View all</a>
+  </div>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-16 xl:gap-64 w-full text-center md:text-start"
+  >
+    {posts.map((post) => <PostCard {...post.data} />)}
+  </div>
+  <a href="/blog" class="text-primary pt-5 md:hidden">View all</a>
+</section>
