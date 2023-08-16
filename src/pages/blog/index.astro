@@ -9,9 +9,13 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout>
-  <main class="xl:w-2/5 mx-auto text-dark">
-    <h1 class="font-heading text-3xl md:text-6xl pb-16">Blog</h1>
-    <li class="list-none flex flex-col gap-10">
+  <main class="md:px-40 xl:px-0 xl:w-2/5 mx-auto text-dark">
+    <h1
+      class="font-heading text-3xl md:text-6xl pb-16 text-center md:text-start"
+    >
+      Blog
+    </h1>
+    <li class="list-none flex flex-col gap-10 text-center md:text-start">
       {posts.map((post) => <PostCard slug={post.slug} {...post.data} />)}
     </li>
   </main>
