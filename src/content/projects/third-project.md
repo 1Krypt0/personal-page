@@ -1,5 +1,5 @@
 ---
-title: "Third project"
+title: "Making my own Little IOT project"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 11 2022"
 heroImage: "/profile.jpg"
