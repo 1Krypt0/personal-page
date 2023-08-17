@@ -3,9 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import RecentPosts from "../components/RecentPosts.astro";
 import RecentProjects from "../components/RecentProjects.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
-<BaseLayout>
+<BaseLayout description={SITE_DESCRIPTION} title={SITE_TITLE}>
   <main class="xl:px-20">
     <Hero />
     <RecentPosts />

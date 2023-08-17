@@ -2,13 +2,14 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<BaseLayout>
+<BaseLayout description={SITE_DESCRIPTION} title={SITE_TITLE}>
   <main class="md:px-40 xl:px-0 xl:w-2/5 mx-auto text-dark">
     <h1
       class="font-heading text-3xl md:text-6xl pb-16 text-center md:text-start"
