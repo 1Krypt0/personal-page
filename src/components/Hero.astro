@@ -1,14 +1,16 @@
+---
+const { title, text } = Astro.props;
+---
+
 <section class="flex flex-col md:flex-row xl:gap-36">
   <article
     class="order-last md:order-first flex flex-col items-center md:items-start gap-5 pt-5 md:pt-0 text-dark text-center md:text-start"
   >
     <h1 class="font-heading font-bold text-3xl md:text-6xl">
-      Hi, I'm Tiago, Software Developer.
+      {title}
     </h1>
     <p class="text-lg">
-      I am a University Student from a small place called Milhazes living in
-      Porto, Portugal. I love going to the gym, watching Benfica win and
-      improving myself in every way I can, every single day. Welcome to my page!
+      {text}
     </p>
     <a
       href="/resume.pdf"
