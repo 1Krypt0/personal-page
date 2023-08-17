@@ -31,6 +31,7 @@ const projects = defineCollection({
 		.transform((val) => new Date(val)),
 		category: z.string(),
 		heroImage: z.string().optional(),
+		ghLink: z.string(),
 	}),
 });
 
