@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-const { title, pubDate, category, description, heroImage } = Astro.props;
+const { title, pubDate, category, description, heroImage } =
+  Astro.props.frontmatter || Astro.props;
+const date = typeof pubDate === "string" ? new Date(pubDate) : pubDate;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -21,7 +23,7 @@ const { title, pubDate, category, description, heroImage } = Astro.props;
 
     <section class="flex flex-col md:flex-row pb-5">
       <p class="md:border-r-dark md:pr-4 md:border-r-2">
-        <FormattedDate date={pubDate} />
+        <FormattedDate date={date} />
       </p>
       <p class="md:border-l-dark md:pl-4 text-light">
         {category}
