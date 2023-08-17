@@ -2,13 +2,12 @@
 import BaseLayout from "./BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 const { title, pubDate, category, description, heroImage } = Astro.props;
-import type { CollectionEntry } from "astro:content";
-
-type Props = CollectionEntry<"blog">["data"];
 ---
 
 <BaseLayout title={title} description={description}>
-  <article class="md:px-40 xl:px-0 xl:w-2/5 mx-auto text-dark">
+  <article
+    class="md:px-40 xl:px-0 xl:w-2/5 mx-auto text-dark w-full overflow-x-hidden"
+  >
     <h1 class="text-5xl font-heading leading-normal pb-5">{title}</h1>
     {
       heroImage && (
@@ -29,7 +28,9 @@ type Props = CollectionEntry<"blog">["data"];
       </p>
     </section>
 
-    <div class="">
+    <div
+      class="prose prose-stone prose-lg prose-headings:font-heading prose-img:rounded-md"
+    >
       <slot />
     </div>
   </article>

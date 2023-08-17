@@ -6,7 +6,9 @@ const year = pubDate.getFullYear();
 ---
 
 <BaseLayout title={title} description={description}>
-  <article class="md:px-40 xl:px-0 xl:w-2/5 mx-auto text-dark">
+  <article
+    class="md:px-40 xl:px-0 xl:w-2/5 mx-auto text-dark w-full overflow-x-hidden"
+  >
     <h1 class="text-5xl font-heading leading-normal pb-5">{title}</h1>
 
     <img
@@ -15,7 +17,7 @@ const year = pubDate.getFullYear();
       alt={`${title} Hero Image`}
     />
     <section class="flex justify-between items-center pb-5">
-      <span class="flex flex-col md:flex-row">
+      <span class="flex flex-col gap-2 md:gap-0 md:flex-row">
         <div class="text-white bg-primary rounded-2xl px-2 md:mr-4 max-w-fit">
           {year}
         </div>
@@ -38,7 +40,9 @@ const year = pubDate.getFullYear();
         >
       </a>
     </section>
-    <div class="">
+    <div
+      class="prose prose-stone prose-lg prose-headings:font-heading prose-img:rounded-md"
+    >
       <slot />
     </div>
   </article>
