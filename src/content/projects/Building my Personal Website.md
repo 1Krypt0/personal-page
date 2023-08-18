@@ -6,6 +6,7 @@ heroImage: /personal-page.png
 category: Web Dev
 ghLink: https://github.com/1Krypt0/personal-page
 ---
+
 # WIP
 
 This is the (for now incomplete) story of how I built my personal website.
