@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+
+export async function getStaticPaths({ paginate }) {
+  const projects = (await getCollection("projects")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  return paginate(projects, { pageSize: 5 });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout description={SITE_DESCRIPTION} title={SITE_TITLE}>
+  <main class="md:px-40 xl:px-0 xl:w-2/5 mx-auto text-dark">
+    <h1
+      class="font-heading text-3xl md:text-6xl pb-16 text-center md:text-start"
+    >
+      Projects
+    </h1>
+    <li class="list-none flex flex-col gap-10 text-center md:text-start">
+      {
+        page.data.map((project) => (
+          <ProjectCard slug={project.slug} {...project.data} />
+        ))
+      }
+    </li>
+
+    <section class="flex w-full justify-evenly items-center pt-16">
+      {
+        page.url.prev ? (
+          <a
+            href={page.url.prev}
+            class="bg-primary text-white w-24 py-3 rounded-lg text-xl text-center"
+          >
+            Previous
+          </a>
+        ) : (
+          <a
+            href={page.url.prev}
+            class="bg-primary text-white w-24 py-3 rounded-lg text-xl text-center pointer-events-none"
+          >
+            Previous
+          </a>
+        )
+      }
+      <p>{page.currentPage} of {page.lastPage}</p>
+      {
+        page.url.next ? (
+          <a
+            href={page.url.next}
+            class="bg-primary text-white w-20 py-3 rounded-lg text-xl text-center"
+          >
+            Next
+          </a>
+        ) : (
+          <a
+            href={page.url.next}
+            class="bg-primary text-white w-20 py-3 rounded-lg text-xl text-center pointer-events-none"
+          >
+            Next
+          </a>
+        )
+      }
+    </section>
+  </main>
+</BaseLayout>
