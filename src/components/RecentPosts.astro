@@ -14,12 +14,12 @@ const posts = (await getCollection("blog"))
     >
       Recent Posts
     </h2>
-    <a href="/blog" class="text-primary hidden md:block">View all</a>
+    <a href="/blog/1" class="text-primary hidden md:block">View all</a>
   </div>
   <div
     class="grid grid-cols-1 md:grid-cols-2 gap-16 xl:gap-64 w-full text-center md:text-start"
   >
     {posts.map((post) => <PostCard slug={post.slug} {...post.data} />)}
   </div>
-  <a href="/blog" class="text-primary pt-5 md:hidden">View all</a>
+  <a href="/blog/1" class="text-primary pt-5 md:hidden">View all</a>
 </section>

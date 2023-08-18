@@ -14,7 +14,7 @@ const projects = (await getCollection("projects"))
     >
       Latest Projects
     </h2>
-    <a href="/projects" class="text-primary hidden md:block">View all</a>
+    <a href="/projects/1" class="text-primary hidden md:block">View all</a>
   </div>
   <div class="flex flex-col gap-10 w-full text-center md:text-start">
     {
@@ -23,5 +23,5 @@ const projects = (await getCollection("projects"))
       ))
     }
   </div>
-  <a href="/projects" class="text-primary pt-5 md:hidden">View all</a>
+  <a href="/projects/1" class="text-primary pt-5 md:hidden">View all</a>
 </section>
