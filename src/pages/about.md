@@ -6,8 +6,6 @@ pubDate: "Aug 25, 2023"
 category: "About Me"
 ---
 
-![Profile picture](/profile.jpg)
-
 Hey there, my name is Tiago Rodrigues. I am a Master's Student in Informatics and Computer Engineering at the University of Porto, Portugal. Currently, I'm all set to kick off a semester abroad at the University of Twente in the Netherlands, starting tomorrow (at least, that's the plan as I write this!).
 
 I started this journey through programming the day I decided that I was pretty good at video games. Naturally, I thought that I was the perfect fit for a software developer. A few months later I enrolled in the area, and boy did I find out I was wrong. Luckily I stuck with it, and now here I am, not imagining myself doing anything else.
