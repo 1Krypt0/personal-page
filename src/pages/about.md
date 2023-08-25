@@ -3,9 +3,10 @@ layout: "../layouts/BlogPost.astro"
 title: "About Me"
 description: "Hey there, I'm Tiago. Let me introduce myself."
 pubDate: "Aug 25, 2023"
-heroImage: "/profile.jpg"
 category: "About Me"
 ---
+
+![Profile picture](/profile.jpg)
 
 Hey there, my name is Tiago Rodrigues. I am a Master's Student in Informatics and Computer Engineering at the University of Porto, Portugal. Currently, I'm all set to kick off a semester abroad at the University of Twente in the Netherlands, starting tomorrow (at least, that's the plan as I write this!).
 
