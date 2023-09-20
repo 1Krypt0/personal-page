@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/BlogPost.astro"
+layout: "../layouts/AboutLayout.astro"
 title: "About Me"
 description: "Hey there, I'm Tiago. Let me introduce myself."
 pubDate: "Aug 25, 2023"

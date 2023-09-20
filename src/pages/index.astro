@@ -7,7 +7,7 @@ import { HERO_TEXT, HERO_TITLE, SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
 <BaseLayout description={SITE_DESCRIPTION} title={SITE_TITLE}>
-  <main class="xl:px-20">
+  <main transition:animate="slide" class="xl:px-20">
     <Hero title={HERO_TITLE} text={HERO_TEXT} />
     <RecentPosts />
     <RecentProjects />
