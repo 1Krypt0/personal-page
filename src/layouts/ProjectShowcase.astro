@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
 const { title, pubDate, category, description, heroImage, ghLink } =
   Astro.props;
@@ -11,7 +12,7 @@ const year = pubDate.getFullYear();
   >
     <h1 class="text-5xl font-heading leading-normal pb-5">{title}</h1>
 
-    <img
+    <Image
       src={heroImage}
       class="object-scale-down w-full h-64 mx-auto pb-5 rounded-md"
       alt={`${title} Hero Image`}

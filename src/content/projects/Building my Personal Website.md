@@ -2,10 +2,11 @@
 title: Building my Personal Website
 description: This is a showcase of how I designed and built my very own website from scratch
 pubDate: Aug 18, 2023
-heroImage: /personal-page.png
+heroImage: "../../assets/personal-page.png"
 category: Web Dev
 ghLink: https://github.com/1Krypt0/personal-page
 ---
+
 # 💻 Creating my place on the Internet
 
 I always wanted to have a website for posting my thoughts. Seeing people like Thomas Frank, Ali Abdaal and other bloggers having a place where they could talk about their passions and have people actually interested gave me inspiration to try it for my own. What you are looking at now is the result of that desire.
@@ -14,13 +15,13 @@ I always wanted to have a website for posting my thoughts. Seeing people like Th
 
 This is actually not the first time I attempted this. Back in 2019, during the COVID lock down, I asked for my birthday gift to be a domain name that I could rent out. That was the first time I ever had my place in the internet. However, I didn't really know what to do with it.
 
-I spent the first week just trying to find a good design for my website, only to discover that I had no clue how to design a proper website. I wanted it not only to be a blog, but also a place where I could showcase my skills and progress, much like a personal portfolio. 
+I spent the first week just trying to find a good design for my website, only to discover that I had no clue how to design a proper website. I wanted it not only to be a blog, but also a place where I could showcase my skills and progress, much like a personal portfolio.
 
 The solution was to go with a pre-built template from [Hugo](https://gohugo.io/), which in all fairness was not bad, but it was never what I really wanted. Since I didn't have the skills to improve it myself, I stuck with it.
 
 I stuck with it for a long time actually, and I got what I asked for. I had a place to showcase my skills, my interests, and share my thoughts with everyone that cared to read it. This also came at a point in my life where a lot of things changed, and I got into the whole world of productivity, health and much more (which I still like today, but I learned to be less extreme in my actions, thankfully).
 
-The blog ran for a solid amount of time, however very quickly life got in the way. That time at University, the whole of the Second Semester, was a specially stressful one, probably the worst in my whole journey, with too many things happening all at once, academic or otherwise, besides me also wanting to have my own interests. 
+The blog ran for a solid amount of time, however very quickly life got in the way. That time at University, the whole of the Second Semester, was a specially stressful one, probably the worst in my whole journey, with too many things happening all at once, academic or otherwise, besides me also wanting to have my own interests.
 
 To put it simply, 24 hours was far too little time to do everything I wished. Something had to give. And so, this adventure through writing online was one of the low-hanging pieces that got cut out quickly.
 
@@ -49,7 +50,7 @@ The process started by figuring out the design and the visuals I wanted my websi
 
 As such, I based my design around it, and adapted it to build the final version. This was also a way to update my [Figma](https://www.figma.com/) skills, which is something I want to expand further in the future.
 
-With the design finished, I could on to the actual construction. I already had a tech stack in mind, suited for the needs of my website. 
+With the design finished, I could on to the actual construction. I already had a tech stack in mind, suited for the needs of my website.
 
 Since I didn't need it to have a lot of interactivity (it is all static content), and [Astro](https://astro.build/) was gaining traction, it was the obvious choice. For styling, I don't think you can go wrong with [Tailwind](https://tailwindcss.com/). I have used consistently and can't think of a better tool for styling HTML.
 
@@ -63,7 +64,7 @@ Also, their documentation is amazing. Every question I had, they had a full tuto
 
 The troubles started to appear the moment I had to pass the styling from Figma design to proper HTML and CSS.
 
-My biggest weakness was definitely trying to convert the styles. In Figma, everything works, and making designs that are responsive, beautiful and simple is a breeze. 
+My biggest weakness was definitely trying to convert the styles. In Figma, everything works, and making designs that are responsive, beautiful and simple is a breeze.
 
 However, passing all that design to code is not an easy feat, and it is definitely where the website is lacking the most.
 
@@ -76,7 +77,7 @@ Responsive design is also a pain, even with Tailwind's excellent support. Noneth
 
 This is something I intend to improve, and some projects on going from Figma to code are already planned.
 
-Handling images is by far the biggest problem. Since they are assets mostly out of my control (as I am terrible in generating and editing images), creating a layout that was general enough to fit any type of image is a problem I am still facing. 
+Handling images is by far the biggest problem. Since they are assets mostly out of my control (as I am terrible in generating and editing images), creating a layout that was general enough to fit any type of image is a problem I am still facing.
 
 As of this moment, I have really no solution but to adapt the images to fit the layout, and finding the ones that respect the aspect sizes.
 

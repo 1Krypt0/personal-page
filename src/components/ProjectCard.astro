@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 const { slug, title, description, pubDate, category, heroImage } = Astro.props;
 const year = pubDate.getFullYear();
 ---
@@ -7,7 +8,7 @@ const year = pubDate.getFullYear();
   class="flex flex-col items-center md:items-start md:flex-row w-full gap-10"
 >
   <a href={`/projects/${slug}`} class="shrink-0">
-    <img
+    <Image
       class="w-60 h-full object-scale-down object-center md:object-top rounded-md"
       src={heroImage}
       alt={`${title} Hero Image`}

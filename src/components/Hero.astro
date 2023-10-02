@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import profileImage from "../assets/profile.jpg";
 const { title, text } = Astro.props;
 ---
 
@@ -20,9 +22,9 @@ const { title, text } = Astro.props;
   </article>
 
   <aside class="flex items-center justify-center">
-    <img
+    <Image
       class="w-3/4 sm:w-2/3 md:w-full lg:w-3/4 rounded-full"
-      src="/profile.jpg"
+      src={profileImage}
       alt="Profile Picture"
     />
   </aside>

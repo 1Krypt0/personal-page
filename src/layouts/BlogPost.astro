@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import { Image } from "astro:assets";
 const { title, pubDate, category, description, heroImage } =
   Astro.props.frontmatter || Astro.props;
 const date = typeof pubDate === "string" ? new Date(pubDate) : pubDate;
@@ -13,7 +14,7 @@ const date = typeof pubDate === "string" ? new Date(pubDate) : pubDate;
     <h1 class="text-5xl font-heading leading-normal pb-5">{title}</h1>
     {
       heroImage && (
-        <img
+        <Image
           src={heroImage}
           class="object-scale-down w-full h-64 mx-auto pb-5 rounded-md"
           alt={`${title} Hero Image`}
