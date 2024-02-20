@@ -2,13 +2,13 @@
 layout: "../layouts/AboutLayout.astro"
 title: "About Me"
 description: "Hey there, I'm Tiago. Let me introduce myself."
-pubDate: "Aug 25, 2023"
+pubDate: "Feb 20, 2024"
 category: "About Me"
 ---
 
 ## Who am I
 
-Hey there, my name is Tiago Rodrigues. I am a Master's Student in Informatics and Computer Engineering at the University of Porto, Portugal. Currently, I'm all set to kick off a semester abroad at the University of Twente in the Netherlands, starting tomorrow (at least, that's the plan as I write this!).
+Hey there, my name is Tiago Rodrigues. I am a Master's Student in Informatics and Computer Engineering at the University of Porto, Portugal, currently working on my thesis. Also, I just got back from a 6 month Erasmus experience at the University of Twente, in the Netherlands.
 
 ## How I got here
 
