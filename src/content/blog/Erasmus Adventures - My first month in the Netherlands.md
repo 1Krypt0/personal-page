@@ -2,7 +2,7 @@
 title: Erasmus Adventures - My first month in the Netherlands
 description: A story of how my first month in the Netherlands went, as a University student doing an exchange program
 pubDate: Oct 02, 2023
-category: University
+category: Erasmus
 ---
  
 It is tough to grasp that an entire month has passed since I have been in the Netherlands. And what a roller coaster it has been so far. From encountering a totally different reality to ours to having to deal with the housing crisis first-hand, meeting some fantastic people, discovering the Dutch way of life, and so much more, it hardly seems that time has passed at all.
