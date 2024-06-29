@@ -9,7 +9,7 @@ const date = typeof pubDate === "string" ? new Date(pubDate) : pubDate;
 
 <BaseLayout title={title} description={description}>
   <article
-    class="md:px-40 xl:px-0 xl:w-2/5 mx-auto text-dark w-full overflow-x-hidden"
+    class="md:px-28 xl:px-0 xl:w-2/5 mx-auto text-dark w-full overflow-x-hidden"
   >
     <h1 class="text-5xl font-heading leading-normal pb-5">{title}</h1>
     {
@@ -32,7 +32,7 @@ const date = typeof pubDate === "string" ? new Date(pubDate) : pubDate;
     </section>
 
     <div
-      class="prose prose-lg prose-headings:font-heading prose-img:rounded-md"
+      class="prose prose-xl prose-headings:font-heading prose-img:rounded-md"
     >
       <slot />
     </div>
