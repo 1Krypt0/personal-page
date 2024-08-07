@@ -45,6 +45,7 @@ Now, with two weeks having passed, I am feeling much, much better, although some
 
 I will try to update this situation as it develops, especially because I think it would be nice to record this for posterity. It was the first time such a thing happened to me or to someone close, so it is a whole new experience that I am facing. Let's hope I do get something good out of this, and that it is the start of an epic comeback that culminates in me completing an Ironman. That would be a really cool bit of dad lore to tell my kids one day. I will now end this with a small phrase that I saw a guy on YouTube say, but really stuck with me. I decide it is going to be my second favorite quote after Sic Parvis Magna.
 
-Manifest Excellence.
+**Manifest Excellence.**
 
 See you on the next one!
+
