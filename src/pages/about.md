@@ -8,7 +8,7 @@ category: "About Me"
 
 ## Who am I
 
-Hey there, my name is Tiago Rodrigues. I am a Master's Student in Informatics and Computer Engineering at the University of Porto, Portugal, currently working on my thesis. Also, I just got back from a 6 month Erasmus experience at the University of Twente, in the Netherlands.
+Hey there, my name is Tiago Rodrigues. I hold a Master's Degree in Informatics and Computer Engineering at the University of Porto, Portugal, having completed my thesis in July of this year. Also, I just got back from an incredible 6 month Erasmus experience at the University of Twente, in the Netherlands.
 
 ## How I got here
 
