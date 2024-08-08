@@ -1,5 +1,5 @@
 ---
-title: Riding an Ambulance for the first time
+title: Riding an Ambulance for the First Time
 description: The story of how I dislocated my knee and got to drive in an Ambulance for the first time
 pubDate: Aug 07, 2024
 category: Health
@@ -48,4 +48,3 @@ I will try to update this situation as it develops, especially because I think i
 **Manifest Excellence.**
 
 See you on the next one!
-
