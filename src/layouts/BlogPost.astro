@@ -15,9 +15,9 @@ const date = typeof pubDate === "string" ? new Date(pubDate) : pubDate;
     {
       heroImage && (
         <Image
-          src={heroImage}
+          src={heroImage.url}
           class="object-scale-down w-full h-64 mx-auto pb-5 rounded-md"
-          alt={`${title} Hero Image`}
+          alt={heroImage.alternativeText}
         />
       )
     }

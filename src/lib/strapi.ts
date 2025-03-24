@@ -33,10 +33,12 @@ const articleSchema = z.object({
     .string()
     .datetime()
     .transform((str) => new Date(str)),
-  cover: z.object({
-    url: z.string(),
-    alternativeText: z.string(),
-  }),
+  cover: z
+    .object({
+      url: z.string(),
+      alternativeText: z.string(),
+    })
+    .nullable(),
   category: categorySchema,
 });
 
@@ -52,28 +54,29 @@ export type Article = z.infer<typeof articleSchema>;
 //
 //   return data.map((item: any) => categorySchema.parse(item));
 // };
-//
-// export const getAllPosts = async (): Promise<Article[]> => {
-//   const path = "/api/articles";
-//   const url = new URL(path, STRAPI_URL);
-//
-//   // Build query parameters using qs to populate cover image data
-//   url.search = qs.stringify({
-//     populate: {
-//       cover: {
-//         fields: ["url", "alternativeText"],
-//       },
-//       category: {
-//         fields: ["name", "slug"],
-//       },
-//     },
-//   });
-//
-//   const articlesData = await fetch(url.href);
-//   const { data } = await articlesData.json();
-//
-//   return data.map((item: any) => articleSchema.parse(item));
-// };
+
+export const getAllPosts = async (): Promise<Article[]> => {
+  const path = "/api/articles";
+  const url = new URL(path, STRAPI_URL);
+
+  // Build query parameters using qs to populate cover image data
+  url.search = qs.stringify({
+    populate: {
+      cover: {
+        fields: ["url", "alternativeText"],
+      },
+      category: {
+        fields: ["name", "slug"],
+      },
+    },
+  });
+
+  const articlesData = await fetch(url.href);
+
+  const { data } = await articlesData.json();
+
+  return data.map((item: any) => articleSchema.parse(item));
+};
 //
 // export const getPostsByCategory = async (
 //   category: string,
@@ -206,35 +209,6 @@ export type Article = z.infer<typeof articleSchema>;
 //   return formattedArticles[0];
 // };
 //
-// export const getTermsOfService = async () => {
-//   const path = "/api/terms-of-service";
-//   const url = new URL(path, STRAPI_URL);
-//
-//   const termsOfService = await fetch(url.href);
-//
-//   if (!termsOfService.ok) {
-//     throw new Error("Error fetching Strapi Article");
-//   }
-//
-//   const { data } = await termsOfService.json();
-//
-//   return pageSchema.parse(data);
-// };
-//
-// export const getPrivacyPolicy = async () => {
-//   const path = "/api/privacy-policy";
-//   const url = new URL(path, STRAPI_URL);
-//
-//   const privacyPolicy = await fetch(url.href);
-//
-//   if (!privacyPolicy.ok) {
-//     throw new Error("Error fetching Strapi Article");
-//   }
-//
-//   const { data } = await privacyPolicy.json();
-//
-//   return pageSchema.parse(data);
-// };
 
 export const getAboutPage = async () => {
   const path = "/api/about";

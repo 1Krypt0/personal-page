@@ -1,15 +1,18 @@
 ---
+import type { GetStaticPaths } from "astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostCard from "../../components/PostCard.astro";
-import { getCollection } from "astro:content";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import { getAllPosts } from "../../lib/strapi";
 
-export async function getStaticPaths({ paginate }) {
-  const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+export const getStaticPaths =  (async({paginate}) => {
+  
+  const posts = (await getAllPosts()).sort(
+    (a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf()
   );
   return paginate(posts, { pageSize: 5 });
-}
+}) satisfies GetStaticPaths;
+
 
 const { page } = Astro.props;
 ---
@@ -25,44 +28,26 @@ const { page } = Astro.props;
       Blog
     </h1>
     <li class="list-none flex flex-col gap-10 text-center md:text-start">
-      {page.data.map((post) => <PostCard slug={post.slug} {...post.data} />)}
+      {page.data.map((post) => <PostCard slug={post.slug} title={post.title} description={post.description} pubDate={post.publishedAt} category={post.category.name} />)}
     </li>
     <section class="flex w-full justify-evenly items-center pt-16">
-      {
-        page.url.prev ? (
+
           <a
             href={page.url.prev}
-            class="bg-primary text-white w-24 py-3 rounded-lg text-xl text-center"
+        class={`bg-primary text-white w-24 py-3 rounded-lg text-xl text-center ${page.url.prev ? "pointer-events-none" : ""}`}
           >
             Previous
           </a>
-        ) : (
-          <a
-            href={page.url.prev}
-            class="bg-primary text-white w-24 py-3 rounded-lg text-xl text-center pointer-events-none"
-          >
-            Previous
-          </a>
-        )
-      }
+      
       <p>{page.currentPage} of {page.lastPage}</p>
-      {
-        page.url.next ? (
+
           <a
             href={page.url.next}
-            class="bg-primary text-white w-20 py-3 rounded-lg text-xl text-center"
+        class={`bg-primary text-white w-20 py-3 rounded-lg text-xl text-center ${page.url.next ? "pointer-events-none" : ""}`}
           >
             Next
           </a>
-        ) : (
-          <a
-            href={page.url.next}
-            class="bg-primary text-white w-20 py-3 rounded-lg text-xl text-center pointer-events-none"
-          >
-            Next
-          </a>
-        )
-      }
+      
     </section>
   </main>
 </BaseLayout>
