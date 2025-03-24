@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
+import { STRAPI_URL } from "astro:env/server";
 const { title, pubDate, category, description, heroImage, ghLink } =
   Astro.props;
 const year = pubDate.getFullYear();
@@ -13,9 +14,11 @@ const year = pubDate.getFullYear();
     <h1 class="text-5xl font-heading leading-normal pb-5">{title}</h1>
 
     <Image
-      src={heroImage}
+      src={`${STRAPI_URL}${heroImage.url}`}
+      width={150}
+      height={100}
       class="object-scale-down w-full h-64 mx-auto pb-5 rounded-md"
-      alt={`${title} Hero Image`}
+      alt={heroImage.alternativeText}
     />
     <section class="flex justify-between items-center pb-5">
       <span class="flex flex-col gap-2 md:gap-0 md:flex-row">

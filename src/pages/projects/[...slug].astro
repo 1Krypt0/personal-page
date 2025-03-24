@@ -1,20 +1,21 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
 import ProjectShowcase from "../../layouts/ProjectShowcase.astro";
+import { getAllProjects } from "../../lib/strapi";
+import {marked} from 'marked'
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const projects = await getAllProjects();
+
   return projects.map((project) => ({
     params: { slug: project.slug },
     props: project,
   }));
 }
-type Props = CollectionEntry<"projects">;
 
 const project = Astro.props;
-const { Content } = await project.render();
+const content  =  marked.parse(project.content);
 ---
 
-<ProjectShowcase {...project.data}>
-  <Content />
+<ProjectShowcase title={project.title} pubDate={project.publishedAt} category={project.category.name} description={project.description} heroImage={project.cover} ghLink={project.projectLink}>
+  <article set:html={content}/>
 </ProjectShowcase>

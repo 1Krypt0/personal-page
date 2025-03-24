@@ -2,6 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
+import { STRAPI_URL } from "astro:env/server";
 const { title, pubDate, category, description, heroImage } =
   Astro.props.frontmatter || Astro.props;
 const date = typeof pubDate === "string" ? new Date(pubDate) : pubDate;
@@ -14,8 +15,10 @@ const date = typeof pubDate === "string" ? new Date(pubDate) : pubDate;
     <h1 class="text-5xl font-heading leading-normal pb-5">{title}</h1>
     {
       heroImage && (
-        <Image
-          src={heroImage.url}
+          <Image
+      width={150}
+      height={100}
+          src={`${STRAPI_URL}${heroImage.url}`}
           class="object-scale-down w-full h-64 mx-auto pb-5 rounded-md"
           alt={heroImage.alternativeText}
         />

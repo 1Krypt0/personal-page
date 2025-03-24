@@ -1,16 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
-import { getCollection } from "astro:content";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import {getAllProjects} from "../../lib/strapi"
+import type { GetStaticPaths } from "astro";
 
-export async function getStaticPaths({ paginate }) {
-  const projects = (await getCollection("projects")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+export const getStaticPaths =  (async({paginate}) => {
+  
+  const posts = (await getAllProjects()).sort(
+    (a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf()
   );
+  return paginate(posts, { pageSize: 5 });
+}) satisfies GetStaticPaths;
 
-  return paginate(projects, { pageSize: 5 });
-}
 
 const { page } = Astro.props;
 ---
@@ -25,50 +27,30 @@ const { page } = Astro.props;
     >
       Projects
     </h1>
-    <li class="list-none flex flex-col gap-10 text-center md:text-start">
+    <li class="list-none flex flex-col gap-10 items-center text-center md:text-start">
       {
         page.data.map((project) => (
-          <ProjectCard slug={project.slug} {...project.data} />
+      <ProjectCard slug={project.slug} title={project.title} description={project.description}, pubDate={project.publishedAt} category={project.category} heroImage={project.cover} />
         ))
       }
     </li>
 
     <section class="flex w-full justify-evenly items-center pt-16">
-      {
-        page.url.prev ? (
           <a
             href={page.url.prev}
-            class="bg-primary text-white w-24 py-3 rounded-lg text-xl text-center"
+        class={`bg-primary text-white w-24 py-3 rounded-lg text-xl text-center ${page.url.prev ? "pointer-events-none" : ""}`}
           >
             Previous
           </a>
-        ) : (
-          <a
-            href={page.url.prev}
-            class="bg-primary text-white w-24 py-3 rounded-lg text-xl text-center pointer-events-none"
-          >
-            Previous
-          </a>
-        )
-      }
+      
       <p>{page.currentPage} of {page.lastPage}</p>
-      {
-        page.url.next ? (
+
           <a
             href={page.url.next}
-            class="bg-primary text-white w-20 py-3 rounded-lg text-xl text-center"
+        class={`bg-primary text-white w-20 py-3 rounded-lg text-xl text-center ${page.url.next ? "pointer-events-none" : ""}`}
           >
             Next
           </a>
-        ) : (
-          <a
-            href={page.url.next}
-            class="bg-primary text-white w-20 py-3 rounded-lg text-xl text-center pointer-events-none"
-          >
-            Next
-          </a>
-        )
-      }
     </section>
   </main>
 </BaseLayout>
