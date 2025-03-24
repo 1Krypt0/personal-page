@@ -1,15 +1,21 @@
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
+// @ts-check
+import { defineConfig, envField } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://tiagopbrodrigues.com",
-  integrations: [sitemap()],
-  output: "static",
-
+  env: {
+    schema: {
+      STRAPI_URL: envField.string({ context: "server", access: "public" }),
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  experimental: {
+    svg: true,
   },
 });
