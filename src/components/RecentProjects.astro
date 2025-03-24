@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
+import { getAllProjects } from "../lib/strapi";
 
-const projects = (await getCollection("projects"))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+const projects = (await getAllProjects())
+  .sort((a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf())
   .slice(0, 3);
 ---
 
@@ -19,7 +19,7 @@ const projects = (await getCollection("projects"))
   <div class="flex flex-col gap-10 w-full text-center md:text-start">
     {
       projects.map((project) => (
-        <ProjectCard slug={project.slug} {...project.data} />
+        <ProjectCard slug={project.slug} title={project.title} description={project.description}, pubDate={project.publishedAt} category={project.category} heroImage={project.cover} />
       ))
     }
   </div>
