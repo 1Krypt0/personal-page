@@ -1,15 +1,27 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
-import RecentPosts from "../components/RecentPosts.astro";
-import RecentProjects from "../components/RecentProjects.astro";
-import { HERO_TEXT, HERO_TITLE, SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout description={SITE_DESCRIPTION} title={SITE_TITLE}>
-  <main transition:animate="slide" class="xl:px-20">
-    <Hero title={HERO_TITLE} text={HERO_TEXT} />
-    <RecentPosts />
-    <RecentProjects />
-  </main>
-</BaseLayout>
+<Layout>
+    <div class="space-y-8">
+      {posts.map((post) => (
+        <article class="space-y-2">
+          <a href={`/posts/${post.id}`} class="block group">
+            <h2 class="text-lg md:text-xl font-normal text-foreground group-hover:text-muted-foreground transition-colors mb-1">
+              {post.data.title}
+            </h2>
+            <time class="text-sm text-muted-foreground block">
+              {new Date(post.data.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
+          </a>
+        </article>
+      ))}
+    </div>
+</Layout>

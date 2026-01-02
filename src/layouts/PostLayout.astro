@@ -1,0 +1,28 @@
+---
+import Layout from "./Layout.astro";
+import Prose from "../components/Prose.astro";
+
+interface Props {
+  title: string;
+  date: Date;
+}
+
+const { title, date } = Astro.props;
+---
+<Layout>
+  <article class="pb-12">
+    <header class="mb-8">
+      <h1 class="text-3xl font-semibold mb-2 text-balance">{title}</h1>
+      <time>
+        {new Intl.DateTimeFormat("en-US", {
+          month: "short",
+          day: "2-digit",
+          year: "numeric",
+        }).format(date)}
+      </time>
+    </header>
+      <Prose>
+        <slot/>
+      </Prose>
+  </article>
+</Layout>

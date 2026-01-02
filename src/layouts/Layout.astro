@@ -1,0 +1,48 @@
+---
+import "../styles/global.css"
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+    />
+		<title>Tiago Rodrigues</title>
+	</head>
+    <body class='font-sans antialiased'>
+      <nav class="max-w-2xl mx-auto px-6 py-6 md:py-8 flex items-center justify-between">
+        <a
+          href="/"
+          class="text-foreground hover:text-muted-foreground transition-colors text-xl md:text-2xl font-semibold"
+        >
+          Tiago Rodrigues
+        </a>
+        <a
+          href="/about"
+          class="text-foreground hover:text-muted-foreground transition-colors text-sm md:text-base"
+        >
+          About
+        </a>
+      </nav>
+      <main class="max-w-2xl mx-auto px-6 py-4 md:py-6">
+        <slot />
+      </main>
+    </body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
