@@ -3,7 +3,7 @@ layout: ../layouts/AboutLayout.astro
 title: About
 ---
 
-Hey there, I'm a software engineer working from Porto, Portugal.
+Hey there, I'm a software engineer.
 
 ## How I got here
 
