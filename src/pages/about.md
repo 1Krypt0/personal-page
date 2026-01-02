@@ -3,7 +3,7 @@ layout: ../layouts/AboutLayout.astro
 title: About
 ---
 
-Hey there, my name is Tiago Rodrigues. I'm a software engineer.
+Hey there, I'm a software engineer working from Porto, Portugal.
 
 ## How I got here
 
